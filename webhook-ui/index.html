@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho Auth Automator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Zoho Auth Automator</h1>
+            <p>Enter your credentials to securely retrieve your refresh token.</p>
+        </header>
+
+        <form id="authForm">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="clientId">Client ID</label>
+                    <input type="text" id="clientId" placeholder="1000.XXXXX..." required>
+                </div>
+                <div class="input-group">
+                    <label for="clientSecret">Client Secret</label>
+                    <input type="password" id="clientSecret" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                <span class="btn-text">Start Automated Flow</span>
+                <div class="loader"></div>
+            </button>
+        </form>
+
+        <div id="status" class="status-box hidden">
+            <p id="statusMessage">Waiting for input...</p>
+        </div>
+
+        <div id="result" class="result-box hidden">
+            <h3>Refresh Token Retrieved!</h3>
+            <div class="token-container">
+                <code id="refreshTokenDisplay"></code>
+                <button id="copyBtn">Copy</button>
+            </div>
+            <p class="warning">Keep this token secure. Do not share it.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
